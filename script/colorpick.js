@@ -15,7 +15,6 @@ function ranom() {
 
 function colorTransform() {
     body.style.backgroundColor = colorRandom();
-    header.style.color = colorRandom();
 }
 setInterval(colorTransform, 5000);
 
