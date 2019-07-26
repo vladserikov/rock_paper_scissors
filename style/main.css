@@ -45,7 +45,7 @@ article{
     overflow: hidden;
     border: 1px solid var(--block-second);
     border-radius: 10px;
-    transition: .1s ease-in;
+    transition: box-shadow .1s ease-in;
 }
 img{
     width: 180px;
@@ -54,5 +54,22 @@ img{
 .hands:hover {
     box-shadow: 1px 2px 5px var(--second-color),
     -1px 2px 5px var(--second-color);
-    scale: 1.5;
+}
+
+.points{
+    margin: 20px auto;
+    padding: 0px 20px;
+    width: 40vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    height: 15vh;
+    align-items: center;
+    background-color: var(--block-second);
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+.computer-hover{
+    box-shadow: 1px 2px 30px black,
+    -1px 2px 30px black;
 }
