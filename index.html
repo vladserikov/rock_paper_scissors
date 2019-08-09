@@ -9,13 +9,23 @@
 </head>
 <body>
     <header>
-        <h1>Hello</h1>
+        <h1>Hello it rock paper scissors</h1>
+        <p>Click on images</p>
     </header>
     <main>
         <article>
-
+            <div class="block">
+                <div class="hands"><img src="img/rock.png" alt="rock"></div>
+                <div class="hands"><img src="img/paper.png" alt="paper"></div>
+                <div class="hands"><img src="img/scissors.png" alt="scissors"></div>
+            </div>
+            <div class="points">
+                <div class="count">You: <span id="player">0</span></div>
+                <div class="count">Computer: <span id="comp">0</span></div>
+                <div class="count">Dawn: <span id="dawn">0</span></div>
+            </div>
         </article>
     </main>
-    
+    <script src="script/game.js"></script>
 </body>
 </html>
