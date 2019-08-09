@@ -1,6 +1,5 @@
 function playRound(player, computer) {
-    // const computer = hands[computerSelection];
-    // const player = playerSelection.toLowerCase();
+    
     if (computer === player) {
         return 0;
     }
@@ -35,19 +34,27 @@ function playRounds(playerSelection) {
 
 }
 
-function playRound(e) {
-    console.log(e.target);
+function endGame() {
     
+}
+
+function changeNumber() {
+    document.querySelector('#player').textContent = playerCount;
+    document.querySelector('#comp').textContent = computerCount;
+    document.querySelector('#dawn').textContent = dawnCount;
+    if(playerCount >= 5 || computerCount >= 5){
+        endGame();
+    }
+}
+function startGame(e) { 
+    let elem;
     if(e.target.hasAttribute('alt')){
-        let elem = e.target.getAttribute('alt');
+        elem = e.target.getAttribute('alt');        
     } else{
         return ;
     }
-
-    
-    
-
-    playRounds(e.target.getAttribute('alt'));
+    playRounds(elem);
+    changeNumber();
     console.log(`Player ${playerCount}\t Comp ${computerCount}\t Dawn ${dawnCount}`)
 }
 let computerCount = 0,
@@ -56,7 +63,8 @@ let computerCount = 0,
 
 
 const allHands = Array.from(document.querySelectorAll('.block'));
-allHands.forEach(hand => hand.addEventListener('click', playRound));    
+allHands.forEach(hand => hand.addEventListener('click', startGame));    
+
 
 
 
