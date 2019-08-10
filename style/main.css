@@ -6,6 +6,11 @@
     --block-text: #563600;
     --block-second: #563600;
 }
+*{
+    border: none;
+    text-decoration: none;
+    outline: none;
+}
 html, body{
     /* height: 100%; */
     width: 100%;
@@ -72,4 +77,37 @@ img{
 .computer-hover{
     box-shadow: 1px 2px 30px black,
     -1px 2px 30px black;
+}
+
+#template {
+    position: absolute;
+    left: 5vw;
+    top: 5vh;
+    width: 90vw;
+    height: 90vh;
+    background-color: var(--block-main);
+    color: var(--text-color);
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px black,
+    -5px -5px 10px black;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+#restart{
+    font-size: 20px;
+    padding: 10px;
+    background-color: #7daf20;
+    color: aqua;
+    text-transform: uppercase;
+    border-radius: 8px;
+}
+#restart:hover{
+    background-color: #3f580f;
+    box-shadow: 0px 0px 15px wheat;
+}
+#restart:active{
+    background-color: #fff;
+    color: black;
+    box-shadow: 0px 0px 5px black;
 }

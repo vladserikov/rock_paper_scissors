@@ -1,3 +1,6 @@
+let computerCount = 0,
+    dawnCount = 0,
+    playerCount = 0;
 function playRound(player, computer) {
     
     if (computer === player) {
@@ -35,7 +38,21 @@ function playRounds(playerSelection) {
 }
 
 function endGame() {
+    const template = document.querySelector('#template');
+    const body = document.querySelector('body');
+    const clone = template.cloneNode(true);
     
+    if(playerCount > computerCount){   
+        clone.querySelector('#winner').textContent = 'YOU';
+    } else{
+        clone.querySelector('#winner').textContent = 'Computer';
+    }
+    cloneElement.appendChild(clone);
+    body.appendChild(cloneElement);
+    const btn = clone.querySelector('#restart');
+    btn.addEventListener('click', function () {
+        body.removeChild(cloneElement);
+    })
 }
 
 function changeNumber() {
@@ -57,9 +74,7 @@ function startGame(e) {
     changeNumber();
     console.log(`Player ${playerCount}\t Comp ${computerCount}\t Dawn ${dawnCount}`)
 }
-let computerCount = 0,
-    dawnCount = 0,
-    playerCount = 0;
+
 
 
 const allHands = Array.from(document.querySelectorAll('.block'));
