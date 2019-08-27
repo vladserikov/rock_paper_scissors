@@ -81,8 +81,9 @@ img{
 
 #template {
     position: absolute;
+    display: none;
     left: 5vw;
-    top: 5vh;
+    top: 2vh;
     width: 90vw;
     height: 90vh;
     background-color: var(--block-main);
@@ -93,6 +94,10 @@ img{
     text-align: center;
     font-size: 26px;
     font-weight: bold;
+}
+#winner {
+    color: aliceblue;
+    font-size: 26px;
 }
 #restart{
     font-size: 20px;

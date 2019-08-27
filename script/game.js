@@ -39,19 +39,19 @@ function playRounds(playerSelection) {
 
 function endGame() {
     const template = document.querySelector('#template');
-    const body = document.querySelector('body');
-    const clone = template.cloneNode(true);
     
     if(playerCount > computerCount){   
-        clone.querySelector('#winner').textContent = 'YOU';
+        template.querySelector('#winner').textContent = 'YOU';
     } else{
-        clone.querySelector('#winner').textContent = 'Computer';
+        template.querySelector('#winner').textContent = 'Computer';
     }
-    cloneElement.appendChild(clone);
-    body.appendChild(cloneElement);
-    const btn = clone.querySelector('#restart');
-    btn.addEventListener('click', function () {
-        body.removeChild(cloneElement);
+    template.style.display = 'block';
+    template.querySelector('#restart').addEventListener('click', function (e) {
+        computerCount = 0;
+        dawnCount = 0;
+        playerCount = 0;
+        changeNumber();
+        template.style.display = 'none';
     })
 }
 
@@ -80,45 +80,11 @@ function startGame(e) {
 const allHands = Array.from(document.querySelectorAll('.block'));
 allHands.forEach(hand => hand.addEventListener('click', startGame));    
 
-
-
-
-
-/* 
-function playRound(playerSelection, computerSelection) {
-    const computer = hands[computerSelection];
-    const player = playerSelection.toLowerCase();
-    if (computer === player) {
-        return 0;
-    }
-    if (player == 'rock') {
-        return computer === 'paper' ? -1 : 1;
-    }
-    if (player == 'paper') {
-        return computer === 'rock' ? 1 : -1;
-    }
-    if (player == 'scissors') {
-        return computer === 'rock' ? -1 : 1;
-    }
-}
-
-function computerPlay() {
-    return Math.floor(Math.random() * 3)
-}
-const hands = ['rock', 'paper', 'scissors'];
-
-function game() {
-
-        let computerSelection = computerPlay();
-        let result = playRound(playerSelection, computerSelection);
-        if (result == 0) {
-            count++;
-        } else if (result == 1) {
-            playerCount++;
-        } else {
-            computerCount++;
-        }
-        
-    }
-}
-game(); */
+// const reastart = document.querySelector('#restart');
+// restart.addEventListener('click', function (e) {
+//     computerCount = 0;
+//     dawnCount = 0;
+//     playerCount = 0;
+//     let rest = document.getElementById('template');
+//     rest.style.display = 'none';
+// })
